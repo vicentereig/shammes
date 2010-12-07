@@ -4,10 +4,15 @@ class HitController < ApplicationController
   end
 
   def push
-    params[:hit].merge!(:ip => request.remote_ip, :referer => request.headers["Referer"], :browser => request.headers["User-Agent"])
+    params[:hit].merge!(:ip => request.remote_ip, :browser => request.headers["User-Agent"])
     h = Hit.new(params[:hit])
     h.save!
-    render :text => "Magic text."
+    send_data(
+        File.open File.join(Rails.root, "public/images/magic_star.png"), 
+        :type => "image/png",
+        :filename => "mugic_sturr.png",
+        :disposition => 'inline'
+      )
   end
 
 end

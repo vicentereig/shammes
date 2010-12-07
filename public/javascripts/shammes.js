@@ -1,9 +1,3 @@
-$(document).ready( function() {  
-  $.ajax({ url: 'http://radiant-earth-22.heroku.com/hit/push',
-          data: { hit: { url: document.URL } },
-          type: 'GET',
-          success: function(data) {
-            //console.log("Suceeded: ", data);
-          }
-  });
-});
+
+
+$('body').append('<img src="http://radiant-earth-22.heroku.com/hit/push/?' + jQuery.param({ hit: { url: document.URL, referer: document.referer } }) + '"/>');
