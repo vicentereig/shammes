@@ -4,7 +4,7 @@ class Hit
 
   field   :url
   field   :ip
-  field   :referer
+  field   :referrer
   field   :browser
 
   validates_presence_of :url, :ip, :browser
