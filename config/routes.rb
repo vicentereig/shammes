@@ -1,7 +1,7 @@
 Shammes::Application.routes.draw do
-  get "hit_controller/list"
+  get "hit/list"
 
-  get "hit_controller/push"
+  get "hit/push"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

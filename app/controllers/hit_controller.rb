@@ -1,4 +1,4 @@
-class HitControllerController < ApplicationController
+class HitController < ApplicationController
   def list
     @hits = Hit.ascending(:created_at)
   end
