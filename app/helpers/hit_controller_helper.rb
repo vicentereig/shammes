@@ -1,0 +1,2 @@
+module HitControllerHelper
+end
