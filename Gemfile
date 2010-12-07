@@ -7,10 +7,8 @@ gem "mongoid", "2.0.0.beta.20"
 group :linux do
   gem "bson_ext", "1.1.2"
   gem "mongo_ext"
+  gem 'unicorn'
 end
-
-# Use unicorn as the web server
-gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'

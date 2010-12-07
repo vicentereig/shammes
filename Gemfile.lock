@@ -35,6 +35,7 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
+    kgio (2.0.0)
     mail (2.2.12)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -73,6 +74,9 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    unicorn (3.0.1)
+      kgio (~> 2.0.0)
+      rack
     will_paginate (3.0.pre2)
 
 PLATFORMS
@@ -83,3 +87,4 @@ DEPENDENCIES
   mongo_ext
   mongoid (= 2.0.0.beta.20)
   rails (= 3.0.3)
+  unicorn
