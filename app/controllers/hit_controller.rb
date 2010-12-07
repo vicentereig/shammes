@@ -1,6 +1,6 @@
 class HitController < ApplicationController
   def list
-    @hits = Hit.ascending(:created_at)
+    @hits = Hit.descending(:created_at)
   end
 
   def push
@@ -10,9 +10,10 @@ class HitController < ApplicationController
       h.save!
     end
 
-    send_file(
-        "public/images/magic_star.png",
+    send_data(
+        File.open(File.join(Rails.root, "/public/images/magic_star.png"), 'rb'){ |io| io.read },
         :type => "image/png",
+        :size => File.size(File.join(Rails.root, "/public/images/magic_star.png")),
         :filename => "magic_star.png",
         :disposition => 'inline'
       )
