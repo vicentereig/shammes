@@ -1,6 +1,6 @@
 class HitController < ApplicationController
   def list
-    @hits = Hit.descending(:created_at)
+    @hits = Hit.desc(:created_at)
   end
 
   def push
