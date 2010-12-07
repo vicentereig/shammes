@@ -20,7 +20,7 @@
       <% @hits.each do |hit| %>
         <tr>
           <td><%= hit.created_at%></td>
-          <td><%= hit.url%></td>
+          <td><%= link_to hit.url, hit.url %></td>
           <td><%= hit.ip%></td>
           <td><%= hit.referrer%></td>
           <td><%= hit.browser%></td>

@@ -1,3 +1,4 @@
+APP_HOST = "http://radiant-earth-22.heroku.com"
 Shammes::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
