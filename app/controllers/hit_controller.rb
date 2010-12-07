@@ -4,7 +4,10 @@ class HitController < ApplicationController
   end
 
   def push
-    Hit.create(:url => request.url, :ip => request.remote_ip, :referer => request.headers["Referer"], :browser => request.headers["User-Agent"])
+    params.merge(:ip => request.remote_ip, :referer => request.headers["Referer"], :browser => request.headers["User-Agent"])
+    h = Hit.new(params[:hit])
+    h.save!
+    render :text => "Magic text."
   end
 
 end

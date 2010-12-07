@@ -7,5 +7,5 @@ class Hit
   field   :referer
   field   :browser
 
-  validates_presence_of :url, :referer, :page
+  validates_presence_of :url, :ip, :browser
 end
