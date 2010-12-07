@@ -10,10 +10,10 @@ class HitController < ApplicationController
       h.save!
     end
 
-    send_data(
-        File.open File.join(Rails.root, "public/images/magic_star.png").read, 
+    send_file(
+        "public/images/magic_star.png",
         :type => "image/png",
-        :filename => "mugic_sturr.png",
+        :filename => "magic_star.png",
         :disposition => 'inline'
       )
   end
