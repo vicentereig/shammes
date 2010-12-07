@@ -4,7 +4,7 @@ gem 'rails', '3.0.3'
 
 gem "mongoid", "2.0.0.beta.20"
 
-group :linux do
+group :heroku do
   gem "bson_ext", "1.1.2"
   gem "mongo_ext"
   gem 'unicorn'
