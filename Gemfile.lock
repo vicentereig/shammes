@@ -113,6 +113,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
+    useragent (0.4.3)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
 
@@ -131,3 +132,4 @@ DEPENDENCIES
   mongoid
   rails
   therubyracer-heroku
+  useragent

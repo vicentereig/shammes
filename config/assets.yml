@@ -2,6 +2,7 @@ embed_assets: on
 
 javascripts:
   app:
+    - public/javascripts/excanvas/*.js
     - public/javascripts/vendor/jquery-1.6.2.js
     - public/javascripts/flot/*
     - public/javascripts/app/*.js
