@@ -10,7 +10,7 @@ local: &local
   host: localhost
   database: shammes_dev
 
-development: *mongohq
+development: *local
 
 test:
   host: localhost

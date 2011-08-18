@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Thu, 18 Aug 2011 19:00:20 GMT from
- * /home/vicente/Workspaces/shammes/app/coffeescripts/shammes.coffee
+/* DO NOT MODIFY. This file was compiled Thu, 18 Aug 2011 18:57:56 GMT from
+ * /home/vicente/Workspaces/shammes/app/coffeescripts/hits/hits.coffee
  */
 
 (function() {

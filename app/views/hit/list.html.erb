@@ -1,44 +1,48 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Real time ugly stats</title>
-  </head>
-  <body>
-    <h1>HitController#list</h1>
-    <p>Find me in app/views/hit_controller/list.html.erb</p>
-    <hr/>
-    <p><%=@hits.size%> hits</p>
-    <%= paginate @hits %>
-    <table id="hits">
-      <thead>
-        <th>&nbsp;</th>
-        <th>Page</th>
-        <th>When</th>
-        <th>Referer</th>
-        <th>User-Agent</th>
-      </thead>
-      <tbody>
-      <% @hits.each do |hit| %>
-        <tr class="<%= cycle("even", "odd") %>">
-          <th><%= hit.ip %></th>
-          <td class="hit">
-            <%= link_to truncate(hit.url), hit.url %>
-          </td>
-          <td><%= hit.created_at %></td>
-          <td>
-            <a href="<%= hit.referrer %>">
-              <%= truncate hit.referrer %>
-            </a>
-          </td>
-          <td>
-            <span title="<%= hit.browser %>">
-              <%= truncate hit.browser %>
-            </span>
-          </td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-    <%= paginate @hits %>
-  </body>
-</html>
+
+<div id="total-hits">
+  <p class="number-of"><%=@hits.size%></p>
+  <p class="caption">hits</p>
+</div>
+
+<div id="placeholder">
+  &nbsp;
+</div>
+
+<%= paginate @hits %>
+<table id="hits">
+  <thead>
+    <th>&nbsp;</th>
+    <th>Page</th>
+    <th>When</th>
+    <th>Referer</th>
+    <th>User-Agent</th>
+  </thead>
+  <tbody>
+    <% @hits.each do |hit| %>
+    <tr class="<%= cycle("even", "odd") %>">
+      <th><%= hit.ip %></th>
+      <td class="hit">
+        <a href="<%= hit.url %>" title="<%= hit.url %>">
+          <%= truncate hit.url %>
+        </a>
+      </td>
+      <td>
+          <span title="<%= hit.created_at %>">
+            <%= distance_of_time_in_words(hit.created_at.to_i, Time.now.to_i) %>
+          </span>
+      </td>
+      <td>
+        <a href="<%= hit.referrer %>" title="<%= hit.referrer %>">
+          <%= truncate hit.referrer %>
+        </a>
+      </td>
+      <td>
+        <span title="<%= hit.browser %>">
+          <%= truncate hit.browser, :length => 40 %>
+        </span>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @hits %>

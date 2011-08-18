@@ -1,5 +1,6 @@
 @import compass/reset
 @import 960/grid
+@import "compass/utilities/general/clearfix"
 
 body
   font-size: 14px
@@ -7,13 +8,42 @@ body
 #container
   font-size: 0.9em
   +grid-system(12)
+
 nav.pagination
-  +grid-prefix(4,12)
-  +grid(4,12)
+  +grid-prefix(2,12)
+  +grid(8,12)
+  padding-top: 1em
   padding-bottom: 1em
+  +alpha
+  +omega
+  +clearfix
+  span
+    display: inline-block
+    margin: 0 10px
+
+
+#total-hits
+  +grid(2,12)
+  +alpha
+  height: 100px
+  p.number-of
+    padding-top: 0.25em
+    font-family: Georgia
+    font-size: 4em
+  p
+    text-align: center
+
+#placeholder
+  +grid(10,12)
+  +omega
+  height: 100px
 
 #hits
+  +alpha
+  +omega
   +grid(12,12)
+
+#hits
   border-bottom: 1px solid #333
   thead
     th
@@ -34,5 +64,5 @@ nav.pagination
     tr.odd
       td, th
         background-color: #EEE
-      th
-        font-weight: bold
+    th
+      font-weight: bold
