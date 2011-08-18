@@ -20,7 +20,11 @@
   <tbody>
     <% @hits.each do |hit| %>
     <tr class="<%= cycle("even", "odd") %>">
-      <th><%= hit.ip %></th>
+      <th>
+        <a href="http://www.maxmind.com/app/locate_demo_ip?ips=<%= hit.ip %>">
+          <%= hit.ip %>
+        </a>
+      </th>
       <td class="hit">
         <a href="<%= hit.url %>" title="<%= hit.url %>">
           <%= truncate hit.url %>
