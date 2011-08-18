@@ -1,11 +1,3 @@
-# mongodb://<user>:<password>@staff.mongohq.com:10039/fuelbroker
-mongohq: &mongohq
-  host: flame.mongohq.com
-  port: 27053
-  username: vicente.reig
-  password: kripton
-  database: shammes
-
 local: &local
   host: localhost
   database: shammes_dev
@@ -16,10 +8,9 @@ test:
   host: localhost
   database: shammes_test
 
-# set these environment variables on your prod server
 production:
-  host: flame.mongohq.com
-  port: 27053
-  username: vicente.reig
-  password: kripton
-  database: shammes
+  host: <%= ENV['MONGOID_HOST'] %>
+  port: <%= ENV['MONGOID_PORT'] %>
+  username: <%= ENV['MONGOID_USERNAME'] %>
+  password: <%= ENV['MONGOID_PASSWORD'] %>
+  database: <%= ENV['MONGOID_DATABASE'] %>
