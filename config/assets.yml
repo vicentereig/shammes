@@ -1,0 +1,11 @@
+embed_assets: on
+
+javascripts:
+  workspace:
+    - public/javascripts/vendor/jquery-1.6.2.js
+
+stylesheets:
+  common:
+    - public/stylesheets/grid.css
+    - public/stylesheets/text.css
+    - public/stylesheets/screen.css

@@ -1,6 +1,6 @@
 class HitController < ApplicationController
   def list
-    @hits = Hit.desc(:created_at)
+    @hits = Hit.desc(:created_at).page params[:page]
   end
 
   def push

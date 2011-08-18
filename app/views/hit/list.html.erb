@@ -8,24 +8,37 @@
     <p>Find me in app/views/hit_controller/list.html.erb</p>
     <hr/>
     <p><%=@hits.size%> hits</p>
-    <table>
+    <%= paginate @hits %>
+    <table id="hits">
       <thead>
+        <th>&nbsp;</th>
+        <th>Page</th>
         <th>When</th>
-        <th>URL</th>
-        <th>IP</th>
         <th>Referer</th>
         <th>User-Agent</th>
       </thead>
       <tbody>
       <% @hits.each do |hit| %>
-        <tr>
-          <td><%= hit.created_at%></td>
-          <td><%= link_to hit.url, hit.url %></td>
-          <td><%= hit.ip%></td>
-          <td><%= hit.referrer%></td>
-          <td><%= hit.browser%></td>
+        <tr class="<%= cycle("even", "odd") %>">
+          <th><%= hit.ip %></th>
+          <td class="hit">
+            <%= link_to truncate(hit.url), hit.url %>
+          </td>
+          <td><%= hit.created_at %></td>
+          <td>
+            <a href="<%= hit.referrer %>">
+              <%= truncate hit.referrer %>
+            </a>
+          </td>
+          <td>
+            <span title="<%= hit.browser %>">
+              <%= truncate hit.browser %>
+            </span>
+          </td>
         </tr>
       <% end %>
       </tbody>
+    </table>
+    <%= paginate @hits %>
   </body>
 </html>

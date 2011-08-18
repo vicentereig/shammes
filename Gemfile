@@ -1,6 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
-gem "mongoid", "2.0.0.beta.20"
-gem "bson_ext", ">= 1.1.4"
+gem 'rails'
+gem "mongoid"
+gem "bson_ext"
 gem "mongo_ext"
+gem 'heroku'
+gem "compass", ">= 0.11.5"
+gem 'compass-960-plugin'
+gem 'jammit'
+gem 'kaminari'
+gem 'barista'
+gem 'therubyracer-heroku'

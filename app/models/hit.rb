@@ -1,6 +1,7 @@
 class Hit
   include Mongoid::Document
   include Mongoid::Timestamps
+  paginates_per 50
 
   field   :url
   field   :ip
