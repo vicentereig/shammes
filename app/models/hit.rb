@@ -17,7 +17,7 @@ class Hit
   def self.pageviews
     map = <<JavaScript
     function() {
-      day = (24 * 60 * 60) % this.created_at;
+      day = Date.UTC(this.created_at.getFullYear(), this.created_at.getMonth(), this.created_at.getDate())
       emit({day: day}, {count: 1});
     }
 JavaScript
@@ -30,5 +30,6 @@ JavaScript
       return {count: count};
     }
 JavaScript
+    Hit.collection.map_reduce(map, reduce, :out => 'daily_pageviews')
   end
 end
