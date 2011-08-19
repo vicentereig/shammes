@@ -69,9 +69,20 @@ body {
   font-family: Arial, Helvetica Neue;
 }
 
-/* line 8, ../../app/stylesheets/screen.sass */
+/* line 9, ../../app/stylesheets/screen.sass */
+a {
+  text-decoration: none;
+  color: #1428c4;
+}
+
+/* line 13, ../../app/stylesheets/screen.sass */
+a:hover, a:visited {
+  text-decoration: underline;
+}
+
+/* line 17, ../../app/stylesheets/screen.sass */
 #container {
-  font-size: 0.9em;
+  font-size: 0.89em;
   margin-left: auto;
   margin-right: auto;
   width: 960px;
@@ -321,14 +332,13 @@ body {
   left: -880px;
 }
 
-/* line 12, ../../app/stylesheets/screen.sass */
+/* line 21, ../../app/stylesheets/screen.sass */
 nav.pagination {
-  padding-left: 160px;
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 620px;
+  width: 940px;
   padding-top: 1em;
   padding-bottom: 1em;
   margin-left: 0;
@@ -336,88 +346,78 @@ nav.pagination {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 20, ../../app/stylesheets/screen.sass */
+/* line 28, ../../app/stylesheets/screen.sass */
 nav.pagination span {
   display: inline-block;
   margin: 0 10px;
 }
 
-/* line 25, ../../app/stylesheets/screen.sass */
+/* line 33, ../../app/stylesheets/screen.sass */
 #total-hits {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
   width: 140px;
-  margin-left: 0;
   height: 100px;
 }
-/* line 29, ../../app/stylesheets/screen.sass */
+/* line 36, ../../app/stylesheets/screen.sass */
 #total-hits p.number-of {
   padding-top: 0.25em;
   font-family: Georgia;
   font-size: 4em;
 }
-/* line 33, ../../app/stylesheets/screen.sass */
+/* line 40, ../../app/stylesheets/screen.sass */
 #total-hits p {
   text-align: center;
 }
 
-/* line 36, ../../app/stylesheets/screen.sass */
+/* line 43, ../../app/stylesheets/screen.sass */
 #placeholder {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
   width: 780px;
-  margin-right: 0;
   height: 100px;
 }
 
-/* line 41, ../../app/stylesheets/screen.sass */
+/* line 47, ../../app/stylesheets/screen.sass */
 #hits {
-  margin-left: 0;
   margin-right: 0;
-  display: inline;
-  float: left;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 940px;
-}
-
-/* line 46, ../../app/stylesheets/screen.sass */
-#hits {
+  margin-left: 0;
+  width: 100%;
   border-bottom: 1px solid #333333;
 }
-/* line 49, ../../app/stylesheets/screen.sass */
+/* line 52, ../../app/stylesheets/screen.sass */
+#hits thead {
+  width: 100%;
+}
+/* line 54, ../../app/stylesheets/screen.sass */
 #hits thead th {
   font-weight: bold;
   text-transform: capitalize-;
-  text-align: center;
+  text-align: left;
 }
-/* line 53, ../../app/stylesheets/screen.sass */
+/* line 58, ../../app/stylesheets/screen.sass */
 #hits thead tr {
   border-bottom: 2px solid #333333;
   border-top: 1px solid #333333;
 }
-/* line 56, ../../app/stylesheets/screen.sass */
-#hits thead tr th {
-  padding: 1em 0;
-}
-/* line 58, ../../app/stylesheets/screen.sass */
-#hits td {
-  padding: 1em;
+/* line 62, ../../app/stylesheets/screen.sass */
+#hits td, #hits th {
+  padding: 0.8em;
   vertical-align: top;
 }
-/* line 62, ../../app/stylesheets/screen.sass */
-#hits tbody th {
-  padding-left: 0.5em;
-}
 /* line 65, ../../app/stylesheets/screen.sass */
+#hits tbody {
+  width: 100%;
+}
+/* line 68, ../../app/stylesheets/screen.sass */
 #hits tbody tr.odd td, #hits tbody tr.odd th {
   background-color: #eeeeee;
 }
-/* line 67, ../../app/stylesheets/screen.sass */
+/* line 70, ../../app/stylesheets/screen.sass */
 #hits tbody th {
   font-weight: bold;
 }
