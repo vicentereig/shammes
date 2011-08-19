@@ -30,6 +30,6 @@ JavaScript
       return {count: count};
     }
 JavaScript
-    Hit.collection.map_reduce(map, reduce, :out => 'daily_pageviews')
+    Hit.collection.map_reduce(map, reduce, :out => 'page_views')
   end
 end
