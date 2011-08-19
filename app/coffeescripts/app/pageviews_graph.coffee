@@ -1,11 +1,4 @@
 jQuery ($) ->
-  console.log "HELLO"
-  data = [[1196463600000, 0], [1196550000000, 0], [1196636400000, 0], [1196722800000, 77],
-      [1196809200000, 3636], [1196895600000, 3575], [1196982000000, 2736], [1197068400000, 1086],
-      [1197154800000, 676], [1197241200000, 1205], [1197327600000, 906], [1197414000000, 710],
-      [1197500400000, 639], [1197586800000, 540], [1197673200000, 435], [1197759600000, 301],
-      [1197846000000, 575], [1197932400000, 481], [1198018800000, 591], [1198105200000, 608]]
-
   # plot draws in UTC!
   weekendAreas = (axes) ->
     console.log axes
@@ -25,14 +18,10 @@ jQuery ($) ->
     selection: { mode: "x" }
     #grid:      { markings: weekendAreas }
 
-  p = $.plot($("#placeholder"), [data], options)
-  console.log p
-# overview = $.plot($("#overview"), [d], {
-  #     series: {
-  #         lines: { show: true, lineWidth: 1 },
-  #         shadowSize: 0
-  #     },
-  #     xaxis: { ticks: [], mode: "time" },
-  #     yaxis: { ticks: [], min: 0, autoscaleMargin: 0.1 },
-  #     selection: { mode: "x" }
-  # });
+  $.plot $("#placeholder"), [], options
+  $.get '/page_views/', (data) ->
+    console.log options
+    pageViews = []
+    for pageView in data
+      pageViews.push [pageView['_id'].day, pageView['value'].count]
+    $.plot $('#placeholder'), [pageViews], options
