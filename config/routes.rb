@@ -1,5 +1,6 @@
 Shammes::Application.routes.draw do
-  root :to => "hit#index"
-  get "hit/index"
-  get "hit/push"
+  resources :hits, :only => [:index] do
+    get "push", :on => :member
+  end
+  root :to => "hits#index"
 end
