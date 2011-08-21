@@ -12,7 +12,8 @@ Shammes::Application.configure do
 
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
-
+  # https://gist.github.com/992838
+  Compass.configuration.sass_options={:never_update=>true}
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
